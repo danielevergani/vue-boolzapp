@@ -36,6 +36,16 @@
                             <a href="#">attiva notifiche desktop</a>
                         </div>
                     </div>
+                    <div class="search__contact">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="cerca o inizia una nuova chat">
+                    </div>
+                    <div class="chat__list">
+                        <div class="chat__element" v-for="elements in contacts">
+                            <img v-bind:src="elements.avatar" alt="img">
+                            <p>{{elements.name}}</p>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="right__side">

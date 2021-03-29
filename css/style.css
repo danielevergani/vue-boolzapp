@@ -66,6 +66,33 @@
     border-radius: 50%;
 }
 
+.search__contact{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 25px;
+    background-color: white;
+}
+
+.search__contact i{
+    margin: 0 20px;
+}
+
+.search__contact input{
+    height: 100%;
+    width: 80%;
+}
+
+.chat__element{
+    display: flex;
+    height: 65px;
+}
+
+.chat__element img{
+    height: 100%;
+    border-radius: 50%;
+}
+
 .right__side{
     display: flex;
     flex-direction: column;
