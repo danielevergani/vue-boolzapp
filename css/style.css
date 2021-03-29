@@ -23,18 +23,59 @@
 
 .left__side{
     height: 100%;
-    width: 300px;
+    width: 500px;
     flex-shrink: 1;
     background-color: lightgreen;
 }
 
 .top__stripe{
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    padding: 0 10px;
     background-color: orange;
 }
 
-.right__side{
+.top__stripe__img{
+    display: flex;
+    align-items: center;
     height: 100%;
-    width: calc(100% - 300px);
+}
+
+.top__stripe__img img{
+    height: 100%;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.tool__sec{
+    display: flex;
+}
+
+.notification{
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background-color: #8EDAFC;
+}
+
+.notif__icon{
+    padding: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.right__side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: calc(100% - 500px);
     background-color: lightblue
+}
+
+.write__sec{
+    height: 65px;
+    background-color: orange;
 }
