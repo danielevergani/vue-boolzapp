@@ -85,6 +85,7 @@
 
 .chat__element{
     display: flex;
+    list-style: none;
     height: 65px;
 }
 
@@ -102,7 +103,36 @@
     background-color: lightblue
 }
 
+.message__exchange{
+    margin-bottom: auto;
+}
+
+.send{
+    background-color: green;
+    max-width: 500px;
+    margin-left: auto;
+}
+
+.receive{
+    background-color: white;
+    max-width: 500px;
+    margin-right: auto;
+}
+
 .write__sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 65px;
     background-color: orange;
+}
+
+.write__sec i{
+    font-size: 25px;
+    margin: 0 25px;
+}
+
+.write__sec input{
+    width: 100%;
+    height: 80%;
 }

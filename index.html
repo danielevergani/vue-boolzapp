@@ -13,6 +13,7 @@
     <body>
         <div id="root">
             <div class="main__wrapper">
+                <!-- sezione sx pagina -->
                 <div class="left__side">
                     <div class="top__stripe">
         
@@ -26,8 +27,11 @@
                             <i class="fas fa-comment-alt"></i> 
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
+
                     </div>
+
                     <div class="notification">
+
                         <div class="notif__icon">
                             <i class="fas fa-bell-slash"></i>
                         </div>
@@ -36,18 +40,24 @@
                             <a href="#">attiva notifiche desktop</a>
                         </div>
                     </div>
+
                     <div class="search__contact">
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="cerca o inizia una nuova chat">
                     </div>
-                    <div class="chat__list">
-                        <div class="chat__element" v-for="elements in contacts">
+
+                    <!-- elenco contatti e chat -->
+                    <ul class="chat__list">
+                        <li class="chat__element" v-for="elements in contacts">
                             <img v-bind:src="elements.avatar" alt="img">
                             <p>{{elements.name}}</p>
-                        </div>
-                    </div>
-
+                        </li>
+                    </ul>
+                    <!--end elenco contatti e chat -->
                 </div>
+                <!--end sezione sx pagina -->
+
+                <!-- sezione dx pagina -->
                 <div class="right__side">
                     <div class="top__stripe">
                         <div class="top__stripe__img">
@@ -61,10 +71,33 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+                    <div class="message__exchange">
+                        <div class="send">
+                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
+                        </div>
+                        <div class="receive">
+                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
+                        </div>
+                        <div class="send">
+                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
+                        </div>
+                        <div class="receive">
+                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
+                        </div>
+                        <div class="send">
+                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
+                        </div>
+                        <div class="receive">
+                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
+                        </div>
+                    </div>
                     <div class="write__sec">
-
+                        <i class="far fa-smile"></i>
+                        <input type="text" placeholder="scrivi un messaggio">
+                        <i class="fas fa-microphone"></i>
                     </div>
                 </div>
+                <!--end sezione dx pagina -->
 
             </div>
         </div>
