@@ -105,7 +105,7 @@ var app = new Vue (
                 }
             );
             this.newText = "";
-            setTimeout(function(){
+            setTimeout(() => {
                 this.contacts[this.elementIndex].messages.push(
                     {
                         text: "ok",
