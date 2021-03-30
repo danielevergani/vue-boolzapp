@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="message__exchange">
-                        <div v-for="element in contacts[elementIndex].messages" class="send">
+                        <div v-for="element in contacts[elementIndex].messages" :class="element.status == 'sent' ? 'send' : 'receive' " >
                             <p>{{element.text}}</p>
                             <p><small>{{element.date}}</small></p>
                         </div>
