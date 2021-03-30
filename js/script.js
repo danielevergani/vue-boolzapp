@@ -89,7 +89,7 @@ var app = new Vue (
         ],
     elementIndex: 0,
     newText: "",
-    
+    date: ""
     },
     
     methods: {
@@ -99,7 +99,8 @@ var app = new Vue (
         sendMsg: function(){
             
             this.contacts[this.elementIndex].messages.push(
-                {
+                {   
+                    date: dayjs().format('DD/MM/YY HH.MM.SS'),
                     text: this.newText,
                     status: "sent"
                 }
@@ -108,6 +109,7 @@ var app = new Vue (
             setTimeout(() => {
                 this.contacts[this.elementIndex].messages.push(
                     {
+                        date: dayjs().format('DD/MM/YY HH.MM.SS'),
                         text: "ok",
                         status: "received"
                     }
