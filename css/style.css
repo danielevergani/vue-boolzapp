@@ -7,7 +7,6 @@
 #root{
     position: relative;
     height: 100vh;
-    background-color: green;
 }
 
 .main__wrapper{
@@ -18,14 +17,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: pink;
 }
 
 .left__side{
     height: 100%;
     width: 500px;
     flex-shrink: 1;
-    background-color: lightgreen;
 }
 
 .top__stripe{
@@ -34,7 +31,12 @@
     justify-content: space-between;
     height: 65px;
     padding: 0 10px;
-    background-color: orange;
+    background-color:#EAEAEA;
+    color: #B1B1B1;
+}
+
+.top__stripe:not(:last-child){
+    border-right: 1px solid lightgray;
 }
 
 .top__stripe__img{
@@ -49,8 +51,16 @@
     padding: 10px;
 }
 
+.top__stripe p{
+    color: black;
+}
+
 .tool__sec{
     display: flex;
+}
+
+.tool__sec i{
+    margin-left: 20px;
 }
 
 .notification{
@@ -100,23 +110,24 @@
     justify-content: space-between;
     height: 100%;
     width: calc(100% - 500px);
-    background-color: lightblue
 }
 
 .message__exchange{
-    margin-bottom: auto;
+    height: 100%;
+    background-image: url('../img/mine.jpg');
 }
 
 .send{
-    background-color: green;
     max-width: 500px;
     margin-left: auto;
+    margin-bottom: 10px;
 }
 
 .receive{
-    background-color: white;
-    max-width: 500px;
+    background-color: red;
+    max-width: 300px;
     margin-right: auto;
+    margin-bottom: 10px;
 }
 
 .write__sec{
@@ -124,7 +135,7 @@
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    background-color: orange;
+    background-color: #F3EEEA;
 }
 
 .write__sec i{
