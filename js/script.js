@@ -86,6 +86,15 @@ var app = new Vue (
                 }
             ],
         },
-    ]
-}
+        ],
+    elementIndex: 0,
+    },
+    
+    methods: {
+        selectContact: function(i){
+            this.elementIndex = i;
+            console.log(this.elementIndex);
+        }
+    }
+
 })

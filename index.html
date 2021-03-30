@@ -48,9 +48,9 @@
 
                     <!-- elenco contatti e chat -->
                     <ul class="chat__list">
-                        <li class="chat__element" v-for="elements in contacts">
+                        <li class="chat__element" v-for="(elements, index) in contacts" @click="selectContact(index)">
                             <img v-bind:src="elements.avatar" alt="img">
-                            <p>{{elements.name}}</p>
+                            <p>{{elements.name}} {{index}} </p>
                         </li>
                     </ul>
                     <!--end elenco contatti e chat -->
@@ -72,24 +72,11 @@
                         </div>
                     </div>
                     <div class="message__exchange">
-                        <div class="send">
-                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
+                        <div v-for="element in contacts[elementIndex].messages" class="send">
+                            <p>{{element.text}}</p>
+                            <p><small>{{element.date}}</small></p>
                         </div>
-                        <div class="receive">
-                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
-                        </div>
-                        <div class="send">
-                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
-                        </div>
-                        <div class="receive">
-                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
-                        </div>
-                        <div class="send">
-                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
-                        </div>
-                        <div class="receive">
-                            <p>Lorem ipsum dolor sit amet consecteturlore est distinctio!</p>
-                        </div>
+                        
                     </div>
                     <div class="write__sec">
                         <i class="far fa-smile"></i>
