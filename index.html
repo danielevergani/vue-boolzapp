@@ -50,7 +50,7 @@
 
                     <!-- elenco contatti e chat -->
                     <ul class="chat__list">
-                        <li class="chat__element" v-for="(elements, index) in contacts" @click="selectContact(index)">
+                        <li class="chat__element" v-for="(elements, index) in contacts" @click="selectContact(index)" :class="elementIndex == index ? 'active' : '' ">
                             <img v-bind:src="elements.avatar" alt="img">
                             <p>{{elements.name}}</p>
                         </li>

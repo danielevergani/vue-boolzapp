@@ -89,6 +89,7 @@ var app = new Vue (
         ],
     elementIndex: 0,
     newText: "",
+    activeClass: ""
     
     },
     
@@ -98,6 +99,7 @@ var app = new Vue (
             
         },
         sendMsg: function(){
+            
             this.contacts[this.elementIndex].messages.push(
                 {
                     text: this.newText,
