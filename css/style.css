@@ -7,6 +7,8 @@
 #root{
     position: relative;
     height: 100vh;
+    font-family: 'Lato', sans-serif;
+    background-color: #DBDBD2;
 }
 
 .main__wrapper{
@@ -23,6 +25,7 @@
     height: 100%;
     width: 500px;
     flex-shrink: 1;
+    background-color: white;
 }
 
 .top__stripe{
@@ -74,34 +77,52 @@
     padding: 20px;
     background-color: white;
     border-radius: 50%;
+    color: #8EDAFC;
+    margin: 0 15px 0 5px;
 }
 
 .search__contact{
     display: flex;
     align-items: center;
     width: 100%;
-    height: 25px;
-    background-color: white;
+    height: 35px;
+    background-color: lightgray;
 }
 
-.search__contact i{
-    margin: 0 20px;
+label{
+    height: 85%;
+    padding: 0 20px;
+    background-color: white;
+    line-height: 30px;
 }
 
 .search__contact input{
-    height: 100%;
-    width: 80%;
+    border: none;
+    height: 85%;
+    width: 100%;
+    padding-left: 10px;
 }
+
 
 .chat__element{
     display: flex;
     list-style: none;
-    height: 65px;
+    padding: 10px 0 10px 15px;
+    height: 70px;
+}
+
+.chat__element:not(:first-child){
+    border-top: 1px solid lightgray ;
+}
+
+.chat__element:hover{
+    background-color:#EAEAEA;
 }
 
 .chat__element img{
     height: 100%;
     border-radius: 50%;
+    margin-right: 20px;
 }
 
 .right__side{
@@ -117,17 +138,36 @@
     background-image: url('../img/mine.jpg');
 }
 
+.message__wrapper{
+    height: 100%;
+    padding: 20px;
+}
+
 .send{
-    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color:#D5F9BA;
+    max-width: 350px;
     margin-left: auto;
     margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .receive{
-    background-color: red;
-    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 350px;
     margin-right: auto;
     margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.data{
+    align-self: flex-end;
+    color: gray;
 }
 
 .write__sec{
@@ -138,12 +178,22 @@
     background-color: #F3EEEA;
 }
 
-.write__sec i{
+.write__sec button{
     font-size: 25px;
-    margin: 0 25px;
+    width: 80px;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .write__sec input{
     width: 100%;
     height: 80%;
+    border: none;
+    padding-left: 20px;
+}
+
+.write__sec input::placeholder{
+    font-size: 16px;
 }

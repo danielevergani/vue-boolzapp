@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
         <!-- development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -42,15 +44,15 @@
                     </div>
 
                     <div class="search__contact">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="cerca o inizia una nuova chat">
+                        <label for="search"><i class="fas fa-search"></i></label>
+                        <input id="search" type="text" placeholder="cerca o inizia una nuova chat">
                     </div>
 
                     <!-- elenco contatti e chat -->
                     <ul class="chat__list">
                         <li class="chat__element" v-for="(elements, index) in contacts" @click="selectContact(index)">
                             <img v-bind:src="elements.avatar" alt="img">
-                            <p>{{elements.name}} {{index}} </p>
+                            <p>{{elements.name}}</p>
                         </li>
                     </ul>
                     <!--end elenco contatti e chat -->
@@ -72,16 +74,18 @@
                         </div>
                     </div>
                     <div class="message__exchange">
-                        <div v-for="element in contacts[elementIndex].messages" :class="element.status == 'sent' ? 'send' : 'receive' " >
-                            <span>{{element.text}}</span>
-                            <p><small>{{element.date}}</small></p>
+                        <div class="message__wrapper">
+                            <div v-for="element in contacts[elementIndex].messages" :class="element.status == 'sent' ? 'send' : 'receive' " >
+                                <span>{{element.text}}</span>
+                                <p class="data"><small>{{element.date}}</small></p>
+                            </div>
                         </div>
                         
                     </div>
                     <div class="write__sec">
-                        <i class="far fa-smile"></i>
+                        <button><i class="far fa-smile"></i></button>
                         <input type="text" placeholder="scrivi un messaggio" v-model="newText" @keypress.13 = "sendMsg">
-                        <i class="fas fa-microphone"></i>
+                        <button><i class="fas fa-microphone"></i></button>
                     </div>
                 </div>
                 <!--end sezione dx pagina -->
