@@ -88,11 +88,24 @@ var app = new Vue (
         },
         ],
     elementIndex: 0,
+    newText: "",
+    newStatus: ""
     },
     
     methods: {
         selectContact: function(i){
             this.elementIndex = i;
+            
+        },
+        sendMsg: function(){
+            this.contacts[this.elementIndex].messages.push(
+                {
+                    text: this.newText,
+                    status: "sent"
+                }
+            );
+            this.newText = "";
+            console.log(this.newText);
             console.log(this.elementIndex);
         }
     }

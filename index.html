@@ -80,7 +80,7 @@
                     </div>
                     <div class="write__sec">
                         <i class="far fa-smile"></i>
-                        <input type="text" placeholder="scrivi un messaggio">
+                        <input type="text" placeholder="scrivi un messaggio" v-model="newText" @keypress.13 = "sendMsg">
                         <i class="fas fa-microphone"></i>
                     </div>
                 </div>
