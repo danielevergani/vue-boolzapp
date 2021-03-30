@@ -89,14 +89,12 @@ var app = new Vue (
         ],
     elementIndex: 0,
     newText: "",
-    activeClass: ""
     
     },
     
     methods: {
         selectContact: function(i){
             this.elementIndex = i;
-            
         },
         sendMsg: function(){
             
