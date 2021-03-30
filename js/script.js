@@ -89,7 +89,7 @@ var app = new Vue (
         ],
     elementIndex: 0,
     newText: "",
-    newStatus: ""
+    
     },
     
     methods: {
@@ -105,7 +105,15 @@ var app = new Vue (
                 }
             );
             this.newText = "";
-            console.log(this.newText);
+            setTimeout(function(){
+                this.contacts[this.elementIndex].messages.push(
+                    {
+                        text: "ok",
+                        status: "received"
+                    }
+                );
+            }, 1000);
+
             console.log(this.elementIndex);
         }
     }
