@@ -89,7 +89,8 @@ var app = new Vue (
         ],
     elementIndex: 0,
     newText: "",
-    searched: ""
+    searched: "",
+    prova:[]
     },
     
     methods: {
@@ -121,12 +122,16 @@ var app = new Vue (
         searchContact: function(){
             this.searched = this.searched.charAt(0).toUpperCase() + this.searched.slice(1);
             this.contacts.forEach((element, index) => {
-                if (this.searched == element.name){
-                    this.elementIndex = index;
-                    this.searched = "";
-                }
-                
+                this.prova.push(element.name);
             } );
+            if(this.prova.includes(this.searched)){
+                this.elementIndex = this.prova.indexOf(this.searched);
+                this.searched = "";
+            }
+            else{
+                alert(this.searched + " non rientra nella tua lista contatti");
+                this.searched = "";
+            }
         }
     }
 

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+*:focus{
+    outline: none;
+}
+
 #root{
     position: relative;
     height: 100vh;
@@ -226,6 +230,17 @@ label{
 
 .write__sec input::placeholder{
     font-size: 16px;
+}
+
+.audio__rec:active{
+    color: #0492c2;
+    animation: recording 2s linear infinite;
+}
+
+@keyframes recording{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
 }
 
 @media screen and (max-width: 992px){
