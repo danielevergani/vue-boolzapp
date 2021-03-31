@@ -89,7 +89,7 @@ var app = new Vue (
         ],
     elementIndex: 0,
     newText: "",
-    date: ""
+    searched: ""
     },
     
     methods: {
@@ -117,6 +117,16 @@ var app = new Vue (
             }, 1000);
 
             console.log(this.elementIndex);
+        },
+        searchContact: function(){
+            this.searched = this.searched.charAt(0).toUpperCase() + this.searched.slice(1);
+            this.contacts.forEach((element, index) => {
+                if (this.searched == element.name){
+                    this.elementIndex = index;
+                    this.searched = "";
+                }
+                
+            } );
         }
     }
 

@@ -45,7 +45,7 @@
 
                     <div class="search__contact">
                         <label for="search"><i class="fas fa-search"></i></label>
-                        <input id="search" type="text" placeholder="cerca o inizia una nuova chat">
+                        <input style="text-transform:capitalize" id="search" type="text" placeholder="cerca o inizia una nuova chat" v-model="searched" @keypress.13 = "searchContact">
                     </div>
 
                     <!-- elenco contatti e chat -->
@@ -93,7 +93,6 @@
             </div>
         </div>
         <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-        <script>dayjs().format()</script>
         <script src="js/script.js"></script>
     </body>
 </html>
