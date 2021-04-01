@@ -86,7 +86,7 @@
                         <div class="emoji__container">
                             <div class="emoji__wrapper">
                                 <ul class="emoji__list" >
-                                    <li v-for="item in emoji">{{item}}</li>
+                                    <li v-for="(item, index) in emoji" @click="insEmoji(index)">{{item}}</li>
                                 </ul>
                             </div>
                             <button><i class="far fa-smile"></i></button>

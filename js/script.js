@@ -137,6 +137,9 @@ var app = new Vue (
                 alert(this.searched + " non rientra nella tua lista contatti");
                 this.searched = "";
             }
+        },
+        insEmoji: function(i){
+            this.newText += this.emoji[i];
         }
     }
 
