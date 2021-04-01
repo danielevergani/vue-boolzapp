@@ -83,7 +83,14 @@
                         
                     </div>
                     <div class="write__sec">
-                        <button><i class="far fa-smile"></i></button>
+                        <div class="emoji__container">
+                            <div class="emoji__wrapper">
+                                <ul class="emoji__list" >
+                                    <li v-for="item in emoji">{{item}}</li>
+                                </ul>
+                            </div>
+                            <button><i class="far fa-smile"></i></button>
+                        </div>
                         <input type="text" placeholder="scrivi un messaggio" v-model="newText" @keypress.13 = "sendMsg">
                         <button class="audio__rec"><i class="fas fa-microphone"></i></button>
                     </div>

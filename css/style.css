@@ -221,6 +221,42 @@ label{
     color: #6B7376;
 }
 
+.emoji__container{
+    position: relative;
+}
+
+.emoji__container:hover .emoji__wrapper{
+    opacity: 1;
+    height: 200px;
+}
+
+.emoji__wrapper{
+    opacity: 0;
+    position: absolute;
+    bottom: 55px;
+    left: 20px;
+    width: 200px;
+    height: 0px;
+    background-color: white;
+    overflow: auto;
+    border-radius: 5px;
+    transition: all .5s;
+}
+
+.emoji__list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 5px 5px 5px 2.5px;
+}
+
+.emoji__list li{
+    width: 20%;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
 .write__sec input{
     width: 100%;
     height: 80%;
