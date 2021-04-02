@@ -131,15 +131,32 @@ label{
     margin: 5px 20px 5px 15px;
     background-color: #009688;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .plus i{
     margin: auto;
 }
 
+.newcontact__data{
+    display: none;
+    height: 0px;
+}
+
+.open{
+    display: block;
+    height:auto;
+}
+
 .submit__contact{
     display: block;
     margin-left: 20px;
+    margin-bottom: 5px;
+    background-color: #009688;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid black;
 }
 
 .chat__list{

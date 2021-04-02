@@ -50,10 +50,10 @@
 
                     <div id="add__contact">
                         <div class="add__contact">
-                            <div class="plus"><i class="fas fa-plus"></i></div>
+                            <div class="plus" @click="showSection"><i class="fas fa-plus"></i></div>
                             <p>aggiungi un contatto</p>
                         </div>
-                        <div class="newcontact__data">
+                        <div class="newcontact__data" :class="addClass">
                             <div><label for="nuovo__nome">Nome</label>
                                 <input v-model="newName" id="nuovo__nome" type="text" placeholder="inserisci il nome del contatto">
                             </div>

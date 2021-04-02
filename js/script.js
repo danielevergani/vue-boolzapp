@@ -95,9 +95,10 @@ var app = new Vue (
         elementIndex: 0,
         newText: "",
         searched: "",
-        prova:[],
+        stringaControllo:[],
         newName: "",
-        newPic: ""
+        newPic: "",
+        addClass: " "
     },
     
     methods: {
@@ -129,14 +130,16 @@ var app = new Vue (
         searchContact: function(){
             this.searched = this.searched.charAt(0).toUpperCase() + this.searched.slice(1);
             this.contacts.forEach((element, index) => {
-                this.prova.push(element.name);
+                this.stringaControllo.push(element.name);
             } );
-            if(this.prova.includes(this.searched)){
-                this.elementIndex = this.prova.indexOf(this.searched);
+            if(this.stringaControllo.includes(this.searched)){
+                this.elementIndex = this.stringaControllo.indexOf(this.searched);
                 this.searched = "";
             }
             else{
                 alert(this.searched + " non rientra nella tua lista contatti");
+                this.newName = this.searched;
+                this.addClass = "open"
                 this.searched = "";
             }
         },
@@ -152,8 +155,20 @@ var app = new Vue (
                     visible: true,
                     messages:[],
                 }
-            );
-            
+            );  
+            this.newName = "";
+            this.newPic = "";
+            this.addClass = " ";
+        },
+        showSection: function(){
+            if(this.addClass == " "){
+                this.addClass = "open";
+            }
+            else if(this.addClass == "open"){
+                this.addClass = " ";
+                this.newName = "";
+                this.newPic = "";
+            }
         }
     }
 
