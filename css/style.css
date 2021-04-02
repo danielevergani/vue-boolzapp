@@ -118,6 +118,9 @@ label{
     padding-left: 10px;
 }
 
+#add__contact{
+    border-bottom: 1px solid lightgray;
+}
 .add__contact{
     display: flex;
     align-items: center;
