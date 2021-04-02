@@ -118,6 +118,30 @@ label{
     padding-left: 10px;
 }
 
+.add__contact{
+    display: flex;
+    align-items: center;
+}
+
+.plus{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    margin: 5px 20px 5px 15px;
+    background-color: #009688;
+    border-radius: 50%;
+}
+
+.plus i{
+    margin: auto;
+}
+
+.submit__contact{
+    display: block;
+    margin-left: 20px;
+}
+
 .chat__list{
     display: flex;
     flex-direction: column;

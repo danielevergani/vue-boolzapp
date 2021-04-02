@@ -95,7 +95,9 @@ var app = new Vue (
         elementIndex: 0,
         newText: "",
         searched: "",
-        prova:[]
+        prova:[],
+        newName: "",
+        newPic: ""
     },
     
     methods: {
@@ -140,6 +142,18 @@ var app = new Vue (
         },
         insEmoji: function(i){
             this.newText += this.emoji[i];
+        },
+        addContact: function(){
+            this.newName = this.newName.charAt(0).toUpperCase() + this.newName.slice(1);
+            this.contacts.push(
+                {
+                    name: this.newName,
+                    avatar: "img/"+this.newPic,
+                    visible: true,
+                    messages:[],
+                }
+            );
+            
         }
     }
 

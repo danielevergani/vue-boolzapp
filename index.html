@@ -45,7 +45,31 @@
 
                     <div class="search__contact">
                         <label for="search"><i class="fas fa-search"></i></label>
-                        <input style="text-transform:capitalize" id="search" type="text" placeholder="cerca o inizia una nuova chat" v-model="searched" @keypress.13 = "searchContact">
+                        <input  v-model="searched" @keypress.13 = "searchContact" style="text-transform:capitalize" id="search" type="text" placeholder="cerca o inizia una nuova chat">
+                    </div>
+
+                    <div id="add__contact">
+                        <div class="add__contact">
+                            <div class="plus"><i class="fas fa-plus"></i></div>
+                            <p>aggiungi un contatto</p>
+                        </div>
+                        <div class="newcontact__data">
+                            <div><label for="nuovo__nome">Nome</label>
+                                <input v-model="newName" id="nuovo__nome" type="text" placeholder="inserisci il nome del contatto">
+                            </div>
+                            <label for="foto__profilo">scegli la foto profilo</label>
+                            <select v-model="newPic" name="immagine" id="foto__profilo">
+                                <option value="avatar_1.jpg">immagine 1</option>
+                                <option value="avatar_2.jpg">immagine 2</option>
+                                <option value="avatar_3.jpg">immagine 3</option>
+                                <option value="avatar_4.jpg">immagine 4</option>
+                                <option value="avatar_5.jpg">immagine 5</option>
+                                <option value="avatar_6.jpg">immagine 6</option>
+                                <option value="avatar_7.jpg">immagine 7</option>
+                                <option value="avatar_8.jpg">immagine 8</option>
+                              </select>
+                            <button class="submit__contact" @click="addContact">aggiungi</button>
+                        </div>
                     </div>
 
                     <!-- elenco contatti e chat -->
