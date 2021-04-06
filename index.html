@@ -101,7 +101,7 @@
                     <!-- sezione chat singolo contatto -->
                     <div class="message__exchange">
                         <div class="message__wrapper">
-                            <div v-for="element in contacts[elementIndex].messages" :class="element.status == 'sent' ? 'send' : 'receive' " >
+                            <div class="message" v-for="element in contacts[elementIndex].messages" :class="element.status == 'sent' ? 'send' : 'receive' " >
                                 <span>{{element.text}}</span>
                                 <p class="data"><small>{{element.date}}</small></p>
                             </div>
@@ -116,7 +116,7 @@
                                     <li v-for="(item, index) in emoji" @click="insEmoji(index)">{{item}}</li>
                                 </ul>
                             </div>
-                            <button><i class="far fa-smile"></i></button>
+                            <button class="emoji__button"><i class="far fa-smile"></i></button>
                         </div>
                         <input type="text" placeholder="scrivi un messaggio" v-model="newText" @keypress.13 = "sendMsg">
                         <button class="audio__rec"><i class="fas fa-microphone"></i></button>

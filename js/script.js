@@ -102,6 +102,7 @@ var app = new Vue (
     },
     
     methods: {
+
         instantSearch:function(){
             let searchedMin = this.searched;
             this.searched = this.searched.charAt(0).toUpperCase() + this.searched.slice(1);
@@ -118,14 +119,16 @@ var app = new Vue (
 
             } );
         },
+
         selectContact: function(i){
             this.elementIndex = i;
         },
+
         sendMsg: function(){
             
             this.contacts[this.elementIndex].messages.push(
                 {   
-                    date: dayjs().format('DD/MM/YY HH.MM.SS'),
+                    date: dayjs().format('DD/MM/YY HH.mm.ss'),
                     text: this.newText,
                     status: "sent"
                 }
@@ -134,14 +137,13 @@ var app = new Vue (
             setTimeout(() => {
                 this.contacts[this.elementIndex].messages.push(
                     {
-                        date: dayjs().format('DD/MM/YY HH.MM.SS'),
+                        date: dayjs().format('DD/MM/YY HH.mm.ss'),
                         text: "ok",
                         status: "received"
                     }
                 );
             }, 1000);
 
-            console.log(this.elementIndex);
         },
         searchContact: function(){
             this.searched = this.searched.charAt(0).toUpperCase() + this.searched.slice(1);
@@ -159,23 +161,29 @@ var app = new Vue (
                 this.searched = "";
             }
         },
+
         insEmoji: function(i){
             this.newText += this.emoji[i];
         },
+
         addContact: function(){
-            this.newName = this.newName.charAt(0).toUpperCase() + this.newName.slice(1);
-            this.contacts.push(
-                {
-                    name: this.newName,
-                    avatar: "img/"+this.newPic,
-                    visible: true,
-                    messages:[],
-                }
-            );  
-            this.newName = "";
-            this.newPic = "";
-            this.addClass = " ";
+
+            if ( this.newName != "" ){
+                this.newName = this.newName.charAt(0).toUpperCase() + this.newName.slice(1);
+                this.contacts.push(
+                    {
+                        name: this.newName,
+                        avatar: "img/"+this.newPic,
+                        visible: true,
+                        messages:[],
+                    }
+                );  
+                this.newName = "";
+                this.newPic = "";
+                this.addClass = " ";
+            }
         },
+
         showSection: function(){
             if(this.addClass == " "){
                 this.addClass = "open";
