@@ -102,6 +102,22 @@ var app = new Vue (
     },
     
     methods: {
+        instantSearch:function(){
+            let searchedMin = this.searched;
+            this.searched = this.searched.charAt(0).toUpperCase() + this.searched.slice(1);
+            searchedMin = searchedMin.charAt(0).toLowerCase() + searchedMin.slice(1)
+
+            this.contacts.forEach((element, index) => {
+                
+                if( element.name.includes(this.searched) || element.name.includes(searchedMin)){
+                    element.visible = true;
+                }
+                else { 
+                    element.visible = false;
+                }
+
+            } );
+        },
         selectContact: function(i){
             this.elementIndex = i;
         },

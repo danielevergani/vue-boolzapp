@@ -42,10 +42,10 @@
                             <a href="#">attiva notifiche desktop</a>
                         </div>
                     </div>
-
+                    <!-- @keypress.13 = "searchContact" -->
                     <div class="search__contact">
                         <label for="search"><i class="fas fa-search"></i></label>
-                        <input  v-model="searched" @keypress.13 = "searchContact" style="text-transform:capitalize" id="search" type="text" placeholder="cerca o inizia una nuova chat">
+                        <input  v-model="searched" @keyup="instantSearch" @keypress.13 = "searchContact" style="text-transform:capitalize" id="search" type="text" placeholder="cerca o inizia una nuova chat">
                     </div>
 
                     <div id="add__contact">
@@ -74,7 +74,7 @@
 
                     <!-- elenco contatti e chat -->
                     <ul class="chat__list">
-                        <li class="chat__element" v-for="(elements, index) in contacts" @click="selectContact(index)" :class="elementIndex == index ? 'active' : '' ">
+                        <li class="chat__element" v-for="(elements, index) in contacts" v-show="elements.visible == true" @click="selectContact(index)" :class="elementIndex == index ? 'active' : '' ">
                             <img v-bind:src="elements.avatar" alt="img">
                             <p>{{elements.name}}</p>
                         </li>
@@ -97,15 +97,18 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+
+                    <!-- sezione chat singolo contatto -->
                     <div class="message__exchange">
                         <div class="message__wrapper">
                             <div v-for="element in contacts[elementIndex].messages" :class="element.status == 'sent' ? 'send' : 'receive' " >
                                 <span>{{element.text}}</span>
                                 <p class="data"><small>{{element.date}}</small></p>
                             </div>
-                        </div>
-                        
+                        </div>                       
                     </div>
+                    <!--end sezione chat singolo contatto -->
+
                     <div class="write__sec">
                         <div class="emoji__container">
                             <div class="emoji__wrapper">
